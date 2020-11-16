@@ -5,7 +5,12 @@ import Die from './Die'
     render() {
         return (
             <div>
-                <Die />
+                <div style={{display:'flex', justifyContent:'center'}}>
+                    <Die />
+                    <Die />
+                </div>
+                             
+                <button>Roll Dice</button>
             </div>
         )
     }
