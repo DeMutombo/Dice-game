@@ -20,38 +20,59 @@ import Die from './Die'
         this.setState({dice2: diceNum2})
 
         // Check value of Rolled Dice
-        let dice;
         switch(diceNum1){
             case 1:
-                // dice ='You rolled One'
-                this.setState({dice1: 'You Rolled 1'})
+                this.setState({})
+                this.setState({dice1: 1})
             break;
             case 2:
-                dice = 2;
+                this.setState({dice1:  2})
             break;
             case 3:
-                dice = 3;
+                this.setState({dice1: 3})
             break;
             case 4:
-                dice = 4;
+                this.setState({dice1: 4})
             break;
             case 5:
-                dice = 5;
+                this.setState({dice1: 5})
             break;
             case 6:
-                dice = 6;
+                this.setState({dice1: 6})
             break;
             default:
                 console.log('Roll again');
 
         }
-        console.log('you Rolled '+ dice);
+        switch(diceNum2){
+            case 1:
+                this.setState({dice2: 1})
+            break;
+            case 2:
+                this.setState({dice2: 2})
+            break;
+            case 3:
+                this.setState({dice2: 3})
+            break;
+            case 4:
+                this.setState({dice2: 4})
+            break;
+            case 5:
+                this.setState({dice2: 5})
+            break;
+            case 6:
+                this.setState({dice2: 6})
+            break;
+            default:
+                console.log('Roll again');
+
+        }
     }
     render() {
         return (
             <div>
                 <div style={{display:'flex', justifyContent:'center'}}>
-                    <Die dice1={this.state.dice1}/>
+                    <Die dice1={this.state.dice1} />
                     <Die dice1={this.state.dice2}/>
                 </div>
                              
