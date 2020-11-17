@@ -5,8 +5,8 @@ import Die from './Die'
      constructor(props){
          super(props)
          this.state = {
-             dice1 : 1,
-             dice2 : 6,
+             dice1 : 'dice',
+             dice2 : 'dice'
          }
     }
 
@@ -22,46 +22,45 @@ import Die from './Die'
         // Check value of Rolled Dice
         switch(diceNum1){
             case 1:
-                this.setState({})
-                this.setState({dice1: 1})
+                this.setState({dice1: "dice-one"})
             break;
             case 2:
-                this.setState({dice1:  2})
+                this.setState({dice1: "dice-two"})
             break;
             case 3:
-                this.setState({dice1: 3})
+                this.setState({dice1: "dice-three"})
             break;
             case 4:
-                this.setState({dice1: 4})
+                this.setState({dice1: "dice-four"})
             break;
             case 5:
-                this.setState({dice1: 5})
+                this.setState({dice1: "dice-five"})
             break;
             case 6:
-                this.setState({dice1: 6})
+                this.setState({dice1: "dice-six"})
             break;
             default:
-                console.log('Roll again');
+                this.setState({dice1: "dice"})
 
         }
         switch(diceNum2){
             case 1:
-                this.setState({dice2: 1})
+                this.setState({dice2: "dice-one"})
             break;
             case 2:
-                this.setState({dice2: 2})
+                this.setState({dice2: "dice-two"})
             break;
             case 3:
-                this.setState({dice2: 3})
+                this.setState({dice2: "dice-three"})
             break;
             case 4:
-                this.setState({dice2: 4})
+                this.setState({dice2: "dice-four"})
             break;
             case 5:
-                this.setState({dice2: 5})
+                this.setState({dice2: "dice-five"})
             break;
             case 6:
-                this.setState({dice2: 6})
+                this.setState({dice2: "dice-six"})
             break;
             default:
                 console.log('Roll again');
@@ -73,10 +72,10 @@ import Die from './Die'
             <div>
                 <div style={{display:'flex', justifyContent:'center'}}>
                     <Die dice1={this.state.dice1} />
-                    <Die dice1={this.state.dice2}/>
+                    <Die dice2={this.state.dice2}/>
                 </div>
                              
-                <button onClick={this.rollDice}>Roll Dice</button>
+                <button className="Die-button" onClick={this.rollDice}>Roll Dice</button>
             </div>
         )
     }
