@@ -6,7 +6,8 @@ import Die from './Die'
          super(props)
          this.state = {
              dice1 : 'dice',
-             dice2 : 'dice'
+             dice2 : 'dice',
+             rolling: false,
          }
     }
 
@@ -16,8 +17,13 @@ import Die from './Die'
         let diceNum2 = Math.floor(Math.random() * 6) + 1;
 
         // Set the first dice to the generated number
-        this.setState({dice1: diceNum1})
-        this.setState({dice2: diceNum2})
+        this.setState({dice1: diceNum1, dice2:diceNum2, rolling: true})
+
+
+        // Wait one second then set rolling to false
+        setTimeout(()=>{
+            this.setState({rolling: false})
+        }, 1500)
 
         // Check value of Rolled Dice
         switch(diceNum1){
@@ -66,6 +72,7 @@ import Die from './Die'
                 console.log('Roll again');
 
         }
+
     }
     render() {
         return (
@@ -75,7 +82,9 @@ import Die from './Die'
                     <Die dice2={this.state.dice2}/>
                 </div>
                              
-                <button className="Die-button" onClick={this.rollDice}>Roll Dice</button>
+                <button className="Die-button" onClick={this.rollDice} disabled={this.state.rolling}>
+                    {this.state.rolling ? 'Rolling...' : 'Roll Dice ' }
+                </button>
             </div>
         )
     }
